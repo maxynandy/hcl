@@ -7,5 +7,5 @@ public interface LoanService {
 	
 	LoanResponse getLoanEligibilityDetails(LoanRequest loanRequest);
 	LoanResponse checkEligibilityBasedOnCreditScore(LoanRequest request,Integer creditScore);
-
+	LoanResponse checkUserAppliedBefore(LoanRequest request);
 }
