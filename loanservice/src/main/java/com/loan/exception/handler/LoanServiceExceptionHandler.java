@@ -1,6 +1,8 @@
 package com.loan.exception.handler;
 
 import org.apache.catalina.connector.ClientAbortException;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConversionException;
@@ -26,6 +28,7 @@ import java.util.stream.Collectors;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 
+@Order(Ordered.HIGHEST_PRECEDENCE)
 @RestControllerAdvice
 @Component
 public class LoanServiceExceptionHandler {

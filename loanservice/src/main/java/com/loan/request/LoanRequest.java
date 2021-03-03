@@ -8,9 +8,12 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.loan.constants.ErrorConstants;
 
+import lombok.ToString;
+
 
 
 @JsonIgnoreProperties( ignoreUnknown = true )
+@ToString
 public class LoanRequest {
 	
 	@NotNull( message=ErrorConstants.ERR_EMPTY_SSNNUMBER)

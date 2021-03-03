@@ -1,5 +1,8 @@
 package com.loan.response;
 
+import lombok.ToString;
+
+@ToString
 public class LoanResponse {
 	
 	private boolean isLoanEligible;

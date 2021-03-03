@@ -10,7 +10,7 @@ import com.loan.database.entity.LoanDetail;
 public interface LoanDetailsRepository extends CrudRepository<LoanDetail, Integer> {
 	
 
-    @Query("SELECT CASE WHEN COUNT(l) > 0 THEN true ELSE false END FROM LoanDetail l WHERE l.ssnNumber = :ssnNumber and datediff('DAY',curdate(),l.appliedDate) <= 30 ")
+    @Query("SELECT CASE WHEN COUNT(l) > 0 THEN true ELSE false END FROM LoanDetail l WHERE l.ssnNumber = :ssnNumber and datediff('d',l.appliedDate,curdate()) <= 30 ")
 	boolean isUserSubmittedBefore(Long ssnNumber);
 	
 
